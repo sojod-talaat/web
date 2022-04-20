@@ -10,7 +10,7 @@
 <body>
 <header>
     <div class="img1">
-<img id="img1" src="../images/alazhar.png">
+<img id="img1" src="../images/aug_logo.png">
 </div>
 
 <div class="navdiv">
