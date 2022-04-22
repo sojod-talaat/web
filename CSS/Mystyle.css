@@ -112,12 +112,15 @@ h1{
     font-family:"Trebuchet MS" ;
 }
 .image3{
-    text-align: right;
+   float:left;
+   /* margin-right: 100px; */
     
 }
 .image3 .img{
     height: 400px;
     width: 400px;
+    margin-left: 300px;
+    margin-top: 40px;
 } 
 .personal{
     padding-left: 50px;
@@ -129,6 +132,7 @@ h1{
  .tableinfo{
     margin-left: 2%;
     width: 29%;
+    float: left;
 }
 .tableinfo th{
     text-align: left;
