@@ -111,3 +111,96 @@ td{
 h1{
     font-family:"Trebuchet MS" ;
 }
+.image3{
+    text-align: right;
+    
+}
+.image3 .img{
+    height: 400px;
+    width: 400px;
+} 
+.personal{
+    padding-left: 50px;
+    
+}
+.personal h1{
+    font-family:"Trebuchet MS" ;
+}
+ .tableinfo{
+    margin-left: 2%;
+    width: 29%;
+}
+.tableinfo th{
+    text-align: left;
+    padding-left: 8%;
+}
+.tableinfo td{
+    padding: 6%;
+} 
+#bold{
+    font-weight: bold;
+}
+
+.div2{
+    background-color: white;
+    margin: 0px 5px;
+}
+.div2 h1{
+    font-family:cursive;
+    margin-left: 35px;
+    margin-top: 20px;
+}
+.tablecourse{
+    font-family: arial, sans-serif;
+    border-collapse:collapse;
+    border: 1px solid black;
+    width: 93%;
+    margin: auto;
+    border-style: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #666;
+    overflow: hidden;
+}
+.tableheder{
+background-color: #606060;
+height:"20px";
+}
+.tablecourse td,th{
+    padding: 8px;
+    height: 80px;
+    text-align: center;
+    }
+   .tablecourse th{
+        height: 20px;
+    }
+    .tab1{
+    background-color: #e5e5e5;
+    }
+    .div3{
+        background-color: white;
+        margin: 0px 5px;
+    }
+    .div3 h1{
+        font-family:cursive;
+        padding-left: 23px;
+    }
+    .div3 .web{
+        padding-left: 46px;
+        padding-bottom: 17px;
+    }
+    .div3 .free{
+        padding-top: 47px;
+    }
+    .div3 sub{
+        font-size: 15px;
+    }
+    .div3 .from{
+        padding-left: 46px;
+        padding-bottom: 22px;
+    }
+    .div3 .work{
+        padding-left: 46px;
+        padding-bottom: 22px;
+        font-size: 12px;
+        font-weight: bold;
+    }

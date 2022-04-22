@@ -37,5 +37,46 @@
 
 </nav>
 </header>
+<div class="personal">
+<h1 >
+        Personal Information
+      </h1>
+</div>
+      <table class="tableinfo">
+          <tr>
+              <td>Full Name:</td>
+              <td id="bold">Sojod Talaat </td>
+          </tr>
+          <tr>
+            <td>Gender:</td>
+            <td id="bold">Female</td>
+        </tr>
+        <tr>
+            <td>Birth Date:</td>
+            <td id="bold"> 19/9/2001 </td>
+        </tr>
+        <tr>
+            <td>Nationality:</td>
+            <td id="bold">Palestinian</td>
+        </tr>
+        <tr>
+            <td>Job title:</td>
+            <td id="bold">Flutter Developer</td>
+        </tr>
+        <tr>
+            <td>Place of Birth:</td>
+            <td id="bold">Gaza</td>
+        </tr>
+        <tr>
+            <td>Year of experiance:</td>
+            <td id="bold">2 years</td>
+        </tr>
+      </table>
+</div>
+
+      <div class="image3">
+         <img src="../images/image3.jpg" alt="sojod" class="img">
+      </div>
+    
 </body>
 </html>

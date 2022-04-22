@@ -10,7 +10,7 @@
 <body>
 <header>
     <div class="img1">
-    <img id="img1" src="../images/aug_logo.png">
+<img id="img1" src="../images/aug_logo.png">
 </div>
 
 <div class="navdiv">
@@ -37,5 +37,10 @@
 
 </nav>
 </header>
+
+<h1>Course "Network Management Admin"</h1>
+<p>from 25/10/2019 to 2/2/2020, totaly 50 training hours</p>
+<p>Institution was "Mohammed Training Center"</p>
+<img src="../images/alazhar.png" alt="">
 </body>
-</html>
+</html> 
