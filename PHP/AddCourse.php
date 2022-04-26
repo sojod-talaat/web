@@ -52,7 +52,7 @@
 </tr>
 <tr>
 <td>  Number Of Hour:   </td>
-<td><input type="text" name="numberofhour" > </td>
+<td><input type="number" name="numberofhour" true> </td>
 
 </tr>
 <tr>
