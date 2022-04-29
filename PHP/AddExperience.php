@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- //data about data -->
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -33,7 +33,7 @@
 <a href="AddCourse.php">Add Course   </a>
 </li>
 <li>
-<a href="AddExperience.php">Add experience   </a>
+<a href="AddExperience.php" class="active">Add experience   </a>
 </li>
 
 </ul>
@@ -46,7 +46,7 @@
 <!-- end header -->
 
     <!-- start form section -->
-    <div class ="courseFrom">
+    <div class ="experinceFrom">
     <form action="ViewCourse.php" method="post">
     <table>
 <tr>
@@ -81,7 +81,7 @@
 </tr>
 <tr>
 <td> Note:  </td>
-<td> <textarea row="8" cols="6" name="textarea" > </textarea>  <br></td>
+<td> <textarea row="8" column="6" name="textarea" > </textarea>  <br></td>
 </tr>
 <tr>
 <td>   <input type="submit" value="Save" class="save" >  </td>
@@ -92,9 +92,10 @@
     
     </form>
 </div>
+<!-- end form section  -->
 <div>
 
-    <img src="../images/image2.jpg" alt="" class="image2" id="Experienceimage">
+    <img src="../images/image2.jpg" alt="" class="image2" >
     </div>
     
     

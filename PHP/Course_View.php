@@ -21,7 +21,7 @@
 <a href="Home.php">Personal Information</a>
 </li>
 <li>
-<a href="Course_View.php">Courses Information</a>
+<a href="Course_View.php" class="active">Courses Information</a>
 </li>
 <li>
 <a href="ViewExperience.php">Experiences Information</a>
@@ -43,16 +43,16 @@
                <table border="1" class="tablecourse">
                     <tr class="tableheder">
                     <th rowspan="2"># </th>
-                    <th rowspan="2">Course Name</th>
+                    <th rowspan="2" id="c"> Course Name</th>
                     <th rowspan="2">Total Hours</th>
-                    <th colspan="2">Date</th>
-                    <th rowspan="2">Institution</th>
+                    <th colspan="2" id="c">Date</th>
+                    <th rowspan="2" id="c">Institution</th>
                     <th rowspan="2">Attachment</th>
                     <th rowspan="2">Notes</th>
                     </tr>
                     <tr class="tableheder">
-                       <th>From</th>
-                       <th>To</th>
+                       <th id="c">From</th>
+                       <th id="c">To</th>
                     </tr>
 
 

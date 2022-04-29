@@ -24,7 +24,7 @@
 <a href="Course_View.php">Courses Information</a>
 </li>
 <li>
-<a href="ViewExperience.php">Experiences Information</a>
+<a href="ViewExperience.php" class="active">Experiences Information</a>
 </li>
 <li>
 <a href="AddCourse.php">Add Course   </a>

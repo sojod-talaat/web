@@ -32,7 +32,7 @@ text-decoration:none;
  
 }
 
-nav ul li a:active{
+.active{
   color:#FFFFFF;
 
 }
@@ -44,14 +44,100 @@ margin: 0;
 padding: 0;
 }
 /* end header */
+/* start homepage */
+.image3{
+    float:left;
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: black;
+    margin-right: 50px;
+    margin-left: 200px;
+    margin-top: 10px;
+     
+     
+ }
+ .image3 .img{
+     height: 400px;
+     width: 400px;
+     margin: 30px;
+ 
+ } 
+ .personal{
+     padding-left: 40px;
+     
+ }
+ .personal h1{
+     font-family:"Trebuchet MS" ;
+     
+ }
+  .tableinfo{
+    margin-top: 10px;
+     margin-left: 2%;
+     width: 29%;
+     float: left;
+ }
+ .tableinfo th{
+     text-align: left;
+     padding-left: 8%;
+ }
+ .tableinfo td{
+     padding: 6%;
+ } 
+ #bold{
+     font-weight: bold;
+ }
+/* end homepage */
 
+/* start course_view */
+
+.div2{
+    background-color: white;
+    margin: 0px 5px;
+}
+.div2 h1{
+    font-family:'Trebuchet MS';
+    margin-left: 45px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.tablecourse{
+    font-family: arial, sans-serif;
+    border-collapse:collapse;
+    border: 1px solid black;
+    width: 93%;
+    margin: auto;
+    border-style: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #666;
+    overflow: hidden;
+}
+#c{
+    text-align: center;
+}
+.tableheder{
+background-color: #606060;
+height:"20px";
+text-align: center;
+}
+.tablecourse td,th{
+    padding: 8px;
+    height: 80px;
+    text-align: center;
+    }
+   .tablecourse th{
+        height: 20px;
+    }
+    .tab1{
+    background-color: #e5e5e5;
+    }
+
+/* end course_view */
 
 /* start addcourse page */
 .courseFrom{
     float: left;
     margin-top: 45px;
     }
-
     .save{
      width: 180px;
      height: 25px;
@@ -59,19 +145,6 @@ padding: 0;
      border-radius: 5px;
      color:white;
     }
-    .image2{
-    float:left;
-    margin-left: 30px;
-    padding: 50px;
-    width:450px;
-    }
-    input[type=date]{
-        width:175px;
-        border-radius: 6px ;
-    }
-  input[type="text"]{
-border-radius: 6px;
-  }
     .rest{
         width: 180px;
         height: 25px;
@@ -80,7 +153,13 @@ border-radius: 6px;
     color:white;
     
     }
-    
+    input[type=date]{
+        width:175px;
+        border-radius: 6px ;
+    }
+  input[type="text"]{
+border-radius: 6px;
+  }
     input[type=textarea]{
         width: 700px;
         height: 900px;
@@ -94,94 +173,34 @@ border-radius: 6px;
     /* end addcourse page */
 
     /* start add experince page */
+    .experinceFrom{
+        float: left;
+        margin-top: 45px;
+        }
+    .image2{
+        float:left;
+      width: 450px;
+      height: 440px;
+        margin-top: 45px; 
+        margin-left: 60px;    
+        
+        }
     .select{
         width: 175px;
         border-radius: 6px;
     }
+
     th{
         text-align: left;
     }
-td{
+    td{
     padding-left: 50px;
     padding-bottom: 40px;
-}
-
-#Experienceimage{
-    height: 440px;
-    margin-left: 60px;
-}
-h1{
-    font-family:"Trebuchet MS" ;
-}
-.image3{
-   float:left;
-   /* margin-right: 100px; */
-    
-}
-.image3 .img{
-    height: 400px;
-    width: 400px;
-    margin-left: 300px;
-    margin-top: 40px;
 } 
-.personal{
-    padding-left: 50px;
-    
-}
-.personal h1{
-    font-family:"Trebuchet MS" ;
-}
- .tableinfo{
-    margin-left: 2%;
-    width: 29%;
-    float: left;
-}
-.tableinfo th{
-    text-align: left;
-    padding-left: 8%;
-}
-.tableinfo td{
-    padding: 6%;
-} 
-#bold{
-    font-weight: bold;
-}
 
-.div2{
-    background-color: white;
-    margin: 0px 5px;
-}
-.div2 h1{
-    font-family:cursive;
-    margin-left: 35px;
-    margin-top: 20px;
-}
-.tablecourse{
-    font-family: arial, sans-serif;
-    border-collapse:collapse;
-    border: 1px solid black;
-    width: 93%;
-    margin: auto;
-    border-style: hidden;
-    border-radius: 10px;
-    box-shadow: 0 0 0 1px #666;
-    overflow: hidden;
-}
-.tableheder{
-background-color: #606060;
-height:"20px";
-}
-.tablecourse td,th{
-    padding: 8px;
-    height: 80px;
-    text-align: center;
-    }
-   .tablecourse th{
-        height: 20px;
-    }
-    .tab1{
-    background-color: #e5e5e5;
-    }
+/* end add experince */
+
+
     .div3{
         background-color: white;
         margin: 0px 5px;

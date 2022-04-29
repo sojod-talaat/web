@@ -20,7 +20,7 @@
 <nav>
 <ul>
 <li>
-<a href="Home.php">Personal Information</a>
+<a href="Home.php" >Personal Information</a>
 </li>
 <li>
 <a href="Course_View.php">Courses Information</a>
@@ -29,7 +29,7 @@
 <a href="ViewExperience.php">Experiences Information</a>
 </li>
 <li>
-<a href="AddCourse.php">Add Course   </a>
+<a href="AddCourse.php" class="active">Add Course   </a>
 </li>
 <li>
 <a href="AddExperience.php">Add experience   </a>

@@ -18,7 +18,7 @@
 <nav>
 <ul>
 <li>
-<a href="Home.php">Personal Information</a>
+<a href="Home.php" class="active">Personal Information</a>
 </li>
 <li>
 <a href="Course_View.php">Courses Information</a>
@@ -42,6 +42,7 @@
         Personal Information
       </h1>
 </div>
+
       <table class="tableinfo">
           <tr>
               <td>Full Name:</td>
