@@ -8,6 +8,58 @@
     <title>Document</title>
 </head>
 <body>
+
+<?php
+  $servername='localhost';
+
+  $username='root';
+
+  $password=""; 
+
+  $dbname='web';
+
+  $conn=mysqli_connect( $servername,$username,$password, $dbname);
+  if(!$conn){
+  die('connection failed: '.mysqli_connect_error());
+            }
+
+//   $sql="CREATE TABLE PERSONAL(
+//     FULL_NAME VARCHAR(20),
+//     Gender VARCHAR(10),
+//     Birth Date,
+//     Nationality VARCHAR(30),
+//     JOB_TITLE VARCHAR(20),
+//     Place_OF_BIRTH VARCHAR(15),
+//     YEAR_OF_EXPERINECE INT (15)
+//     ) " ;
+// if(!mysqli_query($conn,$sql)){
+//   echo 'error creating table: '. mysqli_errno($conn);
+// }
+// $sql="INSERT INTO PERSONAL ( 
+//   FULL_NAME ,
+//     Gender ,
+//     Birth ,
+//     Nationality ,
+//     JOB_TITLE ,
+//     Place_OF_BIRTH ,
+//     YEAR_OF_EXPERINECE 
+//   ) 
+//   VALUES (
+//   'sojod',
+//   'Female', 
+//   '2001-09-19',
+//   'Palestinian',
+//   'Flutter Developer',
+//   'Gaza',
+//  '2')
+// ";
+// if(!mysqli_query($conn,$sql)){
+ 
+// echo" failed inserted: " . mysqli_errno($conn);
+// }
+$sql5="SELECT * FROM PERSONAL";
+$result= mysqli_query($conn,$sql5);
+?>
 <header>
     <div class="img1">
 <img id="img1" src="../images/aug_logo.png">
@@ -41,38 +93,53 @@
 <h1 >
         Personal Information
       </h1>
+     
 </div>
 
       <table class="tableinfo">
-          <tr>
-              <td>Full Name:</td>
-              <td id="bold">Sojod Talaat </td>
-          </tr>
-          <tr>
-            <td>Gender:</td>
-            <td id="bold">Female</td>
-        </tr>
-        <tr>
-            <td>Birth Date:</td>
-            <td id="bold"> 19/9/2001 </td>
-        </tr>
-        <tr>
-            <td>Nationality:</td>
-            <td id="bold">Palestinian</td>
-        </tr>
-        <tr>
-            <td>Job title:</td>
-            <td id="bold">Flutter Developer</td>
-        </tr>
-        <tr>
-            <td>Place of Birth:</td>
-            <td id="bold">Gaza</td>
-        </tr>
-        <tr>
-            <td>Year of experiance:</td>
-            <td id="bold">2 years</td>
-        </tr>
+     
+      <?php while($row = mysqli_fetch_assoc($result)):?> 
+      <tr>
+      
+       <td>Full Name:</td>
+      <b> <td id="bold"> <?php echo $row ['FULL_NAME'];?></td> </b>
+      
+</tr>
+
+<tr>
+<td>Gender:</td>
+<td id="bold"> <?php echo $row ['Gender'];?></td> 
+       
+</tr>
+<tr>
+<td>Birth Date:</td>
+<td id="bold"> <?php echo $row ['Birth'];?></td> 
+       
+</tr>   
+<tr>
+<td>Nationality:</td>
+<td id="bold"> <?php echo $row ['Nationality'];?></td> 
+       
+</tr>  
+<tr>
+<td> Job title</td>
+<td id="bold"> <?php echo $row ['JOB_TITLE'];?></td> 
+       
+</tr>  
+<tr>
+<td>Place Of Birth :</td>
+<td id="bold"> <?php echo $row ['Place_OF_BIRTH'];?></td> 
+       
+</tr>  
+<tr>
+<td> year of experience</td>
+<td id="bold"> <?php echo $row ['YEAR_OF_EXPERINECE'];?></td> 
+       
+</tr> 
+<?php endwhile?>      
+
       </table>
+      
 </div>
 
       <div class="image3">

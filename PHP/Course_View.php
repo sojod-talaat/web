@@ -8,6 +8,48 @@
     <title>Document</title>
 </head>
 <body>
+<?php 
+    $servername="localhost";
+    $username="root";
+    $passwpord="";
+    $dbname="web";
+    $conn=mysqli_connect($servername,$username,$passwpord,$dbname);
+    if(!$conn){
+        die('Connectio failed'. mysqli_connect_error());
+    }
+
+    $sql="SELECT * FROM course3";
+    $result=mysqli_query($conn,$sql);
+
+    // if(mysqli_num_rows($result)>0){
+
+//    "NAME: ".$row["course_name"].
+   
+//     "houre: " .$row["hours_num"].
+
+//     "data: " .$row["data_start"].
+
+//     "end : " .$row["date_end"] .
+
+//     "ins: ".$row["institution"].
+
+//     "att ".$row["Attachment"].
+
+//     "link:" .$row["link"].
+    
+//     "formfi : " .$row["form_file"].
+    
+//     "not:" .$row["note"].
+//     "<br>";
+// }
+//     }
+
+//     else{
+
+//       echo "0 results";
+//     }
+
+    ?>
 <header>
     <div class="img1">
     <img id="img1" src="../images/aug_logo.png">
@@ -54,89 +96,23 @@
                        <th id="c">From</th>
                        <th id="c">To</th>
                     </tr>
-
+                    <?php 
+                    while($row = mysqli_fetch_assoc($result)):  
+                    ?> 
 
                    <tr class="tab1">
                    <td>1 </td>
-                  <td> graphic design</td>
-                  <td>21</td>
-                   <td>2/5/2018 </td>
-                    <td>10/6/2018 </td>
-                    <td>Gaza Goes Global </td>
-                    <td><a href="https://www.alrab7on.com/">View</a></td>
+                  <td><?php echo $row['course_name']?> </td>
+                  <td> <?php echo $row['hours_num']?></td>
+                   <td><?php echo $row['date_start']?></td>
+                    <td><?php echo $row['date_end']?></td>
+                    <td><?php echo $row['institution']?></td>
+                    <td><a href="<?php echo $row['Attachment']?>">View</a></td>
                       <td></td>
                     </tr>
-                    <tr>
-                    <td>2</td>
-                    <td>Flutter</td>
-                    <td>30h</td>
-                    <td>10/3/2021</td>
-                    <td>6/6/2021</td>
-                    <td>Udemy</td>
-                    <td><a href="https://www.udemy.com/course/fluttercourse/learn/lecture/20802876#content">View</a></td>
-                    <td></td>
-                     </tr>
-                   <tr class="tab1">
-                     <td>3</td>
-                     <td>English language</td>
-                     <td>Level 1_Level8</td>
-                     <td>3/3/2020</td>
-                     <td>3/5/2020</td>
-                     <td>Peace Center for Training and Development</td>
-                     <td><a href="">View</a></td>
-                     <td></td>
-                     </tr>
-                     <tr>
-                        <td>4</td>
-                        <td>Web development training with Laravel</td>
-                        <td>3 months</td>
-                        <td>6/7/2021</td>
-                        <td>7/10/2021</td>
-                        <td>Gaza Skay Geeks</td>
-                        <td><a href="">View</a></td>
-                        <td></td>
-                    </tr>
-                    <tr class="tab1">
-                        <td>5</td>
-                        <td>Uxui </td>
-                        <td>5h</td>
-                        <td>11/11/2021</td>
-                        <td>11/11/2021</td>
-                        <td>Udemy</td>
-                        <td><a href="https://www.udemy.com/course/ui-ux-design/">View</a></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Design and montage</td>
-                        <td>4h</td>
-                        <td>2/12/2017</td>
-                        <td>2/12/2017 </td>
-                        <td>YouTube </td>
-                        <td><a href="https://www.udemy.com/course/ui-ux-design/">View</a></td>
-                        <td></td>
-                    </tr>
-                    <tr class="tab1">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
+                    <?php endwhile;?>
+                                </table>
                 </div>
+               
 </body>
 </html>

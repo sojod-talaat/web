@@ -9,6 +9,112 @@
      <link rel="stylesheet" href="../CSS/Mystyle.css"> 
 </head>
 <body>
+
+<?php 
+    $servername="localhost";
+    $username="root";
+    $passwpord="";
+    $dbname="web";
+    $conn=mysqli_connect($servername,$username,$passwpord,$dbname);
+    if(!$conn){
+        die('Connectio failed'. mysqli_connect_error());
+    }
+
+// echo "Connection sucessfully";
+
+// $sql1= " CREATE TABLE course3 (
+//     course_name VARCHAR(30) ,
+//     hours_num INT(10),
+//     date_start DATE ,
+//     date_end DATE,
+//     institution VARCHAR(20),
+//     Attachment VARCHAR(20),
+//     link VARCHAR(10),
+//     form_file VARCHAR(100),
+//     note VARCHAR(30))";
+// if (mysqli_query($conn, $sql1)) {
+// echo "Table course created successfully";
+// } else {
+// echo "Error creating table: " . mysqli_error($conn);
+// }
+
+if(isset($_POST['insert'])){
+    $name=$_POST['coursename'];
+    $num=$_POST['numberofhour'];
+    $start=$_POST['startOfDate'];
+    $end=$_POST['endOfDate'];
+    $ins=$_POST['institution'];
+    $a=$_POST['att'];
+    $ur=$_POST['urll'];
+    $f=$_POST['ChooseFILE'];
+    $n=$_POST['note'];
+    $sql = "INSERT INTO course3 (
+    course_name ,
+     hours_num ,
+     date_start  ,
+     date_end ,
+     institution ,
+     Attachment ,
+     link ,
+     form_file ,
+     note )
+     VALUES (
+         
+         '$name', '$num', '$start','$end','$ins','$a','$ur','$f','$n')";
+  if(!mysqli_query($conn, $sql)){
+  
+      echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+  }
+   
+  }
+
+    
+//     if(isset($_POST['submitt']))
+//      {
+//     $one = $_POST['coursename'];
+//     $two = $_POST['numberofhour'];
+//     $three = $_POST['startOfDate'];
+//     $four = $_POST['endOfDate'];
+//     $five = $_POST['institution'];
+//     $six= $_POST['att'];
+//     $seven=$_POST['urll'];
+//     $six="Nooooooooo";
+//     $nine=$_POST['note']; 
+
+//     $sql = " INSERT INTO course3(
+     
+//     course_name ,
+//     hours_num ,
+//      date_start ,
+//      date_end ,
+//      institution ,
+//      Attachment ,
+//      link ,
+//     form_file,
+//      note
+//      )
+// VALUES(
+//     '$one', 
+//     '$two',
+//     '$three',
+//     '$four',
+//     '$five',
+//     '$six',
+//     '$seven',
+//     $six,
+//     '$nine',
+// )";
+// if (mysqli_query($conn, $sql)) {
+// echo "New record created successfully";
+// } else {
+// echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+
+// }
+//      }
+
+    
+?>
+
     <!-- start header -->
     <header>
     <div class="img1">
@@ -43,7 +149,7 @@
 
     <!-- start form section -->
     <div class ="courseFrom">
-    <form action="ViewCourse.php" method="post">
+    <form action="<?php   echo $_SERVER['PHP_SELF'];?>" method="post">
         <table>
         <tr>
 <td>Course Name: </td>
@@ -60,31 +166,38 @@
 <td><input type="date" name="startOfDate" ></td>
 </tr>
 <tr>
+<td>End Date: </td>
+<td><input type="date" name="endOfDate" id=""></td>
+
+
+</tr>
+<tr>
 <td>  Institution: </td>
 <td><input type="text" name="institution" > </td>
 
 </tr>
 <tr>
 <td>  Attachment:    </td>
-<td>    <input type="radio" name="file"> File <input type="radio" name="file"> URL </td>
+<td> <input type="radio" name="att" value="url" id="url" checked="checked"> File 
+     <input type="radio" name="att" value="file" id="file"> URL </td>
 </tr>
 <tr>
 <td> URL </td>
-<td>   <input type="text" name="url" >  </td>
+<td>   <input type="text" name="urll" >  </td>
 </tr>
 <tr>
     <td>File: </td>
-    <td><input type="file" name="Choose FILE" id=""></td>
+    <td><input type="file" name="ChooseFILE" id=""></td>
 </tr>
 
 <tr>
     <td>
         Note:
     </td>
-    <td> <textarea row="8" column="6" name="textarea" > </textarea></td>
+    <td> <textarea row="8" column="6" name="note" > </textarea></td>
 </tr>
 <tr>
-<td id="lefttd">   <input type="submit" value="Save" class="save" >  </td>
+<td id="lefttd">   <input type="submit" value="Save" class="save" name="insert" >  </td>
 <td>    <input type="submit" value="Reset" class="rest"></td>
 </tr>
 

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../CSS/Mystyle.css"> 
     <title>Document</title>
 </head>
-<body>
+<body>    
 <header>
     <div class="img1">
 <img id="img1" src="../images/aug_logo.png">
