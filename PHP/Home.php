@@ -1,3 +1,4 @@
+<?php require_once('file.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,27 +11,17 @@
 <body>
 
 <?php
-  $servername='localhost';
-
-  $username='root';
-
-  $password=""; 
-
-  $dbname='web';
-
-  $conn=mysqli_connect( $servername,$username,$password, $dbname);
-  if(!$conn){
-  die('connection failed: '.mysqli_connect_error());
-            }
 
 //   $sql="CREATE TABLE PERSONAL(
+//     id int(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 //     FULL_NAME VARCHAR(20),
 //     Gender VARCHAR(10),
 //     Birth Date,
 //     Nationality VARCHAR(30),
 //     JOB_TITLE VARCHAR(20),
 //     Place_OF_BIRTH VARCHAR(15),
-//     YEAR_OF_EXPERINECE INT (15)
+//     YEAR_OF_EXPERINECE INT (15),
+//      image varchar(300)
 //     ) " ;
 // if(!mysqli_query($conn,$sql)){
 //   echo 'error creating table: '. mysqli_errno($conn);
@@ -42,7 +33,8 @@
 //     Nationality ,
 //     JOB_TITLE ,
 //     Place_OF_BIRTH ,
-//     YEAR_OF_EXPERINECE 
+//     YEAR_OF_EXPERINECE,
+//        image
 //   ) 
 //   VALUES (
 //   'sojod',
@@ -51,12 +43,15 @@
 //   'Palestinian',
 //   'Flutter Developer',
 //   'Gaza',
-//  '2')
-// ";
-// if(!mysqli_query($conn,$sql)){
+//  '2',
+//     'image3.jpg'
+// )
+//  ";
+//  if(!mysqli_query($conn,$sql)){
  
-// echo" failed inserted: " . mysqli_errno($conn);
-// }
+//  echo" failed inserted: " . mysqli_errno($conn);
+//  }
+
 $sql5="SELECT * FROM PERSONAL";
 $result= mysqli_query($conn,$sql5);
 ?>
@@ -73,7 +68,7 @@ $result= mysqli_query($conn,$sql5);
 <a href="Home.php" class="active">Personal Information</a>
 </li>
 <li>
-<a href="Course_View.php">Courses Information</a>
+<a href="ViewCourses.php">Courses Information</a>
 </li>
 <li>
 <a href="ViewExperience.php">Experiences Information</a>
@@ -136,15 +131,16 @@ $result= mysqli_query($conn,$sql5);
 <td id="bold"> <?php echo $row ['YEAR_OF_EXPERINECE'];?></td> 
        
 </tr> 
-<?php endwhile?>      
+    
 
       </table>
       
 </div>
 
       <div class="image3">
-         <img src="../images/image3.jpg" alt="sojod" class="img">
+         <img src="<?php echo "../images/".$row['image']; ?>" alt="sojod" class="img">
       </div>
+      <?php endwhile?>  
     
 </body>
 </html>

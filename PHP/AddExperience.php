@@ -1,3 +1,4 @@
+<?php require_once('file.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,53 @@
      <link rel="stylesheet" href="../CSS/Mystyle.css"> 
 </head>
 <body> 
+<?php 
+   
+
+//     $sql="CREATE TABLE EXPERIENCES(
+//         id int(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+//     categoey VARCHAR(20),
+//     title VARCHAR(30),
+//     startmonth Date,
+//     endmonth Date,
+//     insutitution VARCHAR(30),
+//     experince_desc VARCHAR(50000)
+//     ) " ;
+// if(!mysqli_query($conn,$sql)){
+//   echo 'error creating table: '. mysqli_errno($conn);
+// }
+
+if(isset($_POST['insert'])){
+    $ex_category=$_POST['languages'];
+    $ex_title=$_POST['title'];
+    $ex_start=$_POST['startOfDate'];
+    $ex_end=$_POST['end'];
+    $ins=$_POST['institution'];
+    $ex_desc=$_POST['desc'];
+   
+    $sql = "INSERT INTO EXPERIENCES (
+     categoey ,
+     title ,
+     startmonth ,
+     endmonth ,
+     insutitution,
+     experince_desc 
+     )
+     VALUES (
+         
+         '$ex_category', 
+         '$ex_title', 
+         '$ex_start',
+         '$ex_end',
+         '$ins',
+         '$ex_desc')";
+  if(!mysqli_query($conn, $sql)){
+  
+      echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+  }
+   
+  }
+?>
     <!-- start header -->
     <header>
     <div class="img1">
@@ -24,7 +72,7 @@
 <a href="Home.php">Personal Information</a>
 </li>
 <li>
-<a href="Course_View.php">Courses Information</a>
+<a href="ViewCourses.php">Courses Information</a>
 </li>
 <li>
 <a href="ViewExperience.php">Experiences Information</a>
@@ -47,21 +95,24 @@
 
     <!-- start form section -->
     <div class ="experinceFrom">
-    <form action="ViewCourse.php" method="post">
+
+    <form action="<?php   echo $_SERVER['PHP_SELF'];?>"  method="post">
     <table>
 <tr>
 <td>Experiences Category: </td>
 <td><select name="languages" class="select">
-				<option value="Android"></option>
-				<option value="java">Java</option>
-				<option value="DataBase">Data Base</option>
-                <option value="Html">Html</option>
+				
+				<option value="freelancer">freelancer</option>
+				<option value="job"> job </option>
+                <option value="self learning">self learning </option>
+				<option value="other"> other </option>
+                
 			                      </select></td>
 
 </tr>
 <tr>
 <td> Experiences title:</td>
-<td> <input type="text" name="numberofhour" ></td>
+<td> <input type="text" name="title" ></td>
 
 </tr>
 <tr>
@@ -70,27 +121,28 @@
 
 </tr>
 <tr>
-<td> End month</td>
-<td><input type="date" name="endtOfDate" ></td>
+<td> End month:</td>
+<td><input type="date" name="end" ></td>
 
 </tr>
 <tr>
-<td> URL </td>
-<td>  <input type="text" name="url" > <br></td>
+<td> Institution: </td>
+<td>  <input type="text" name="institution" > <br></td>
 
 </tr>
 <tr>
-<td> Note:  </td>
-<td> <textarea row="8" column="6" name="textarea" > </textarea>  <br></td>
+<td> Description:  </td>
+<td> <textarea row="8" column="6" name="desc" > </textarea>  <br></td>
 </tr>
 <tr>
-<td>   <input type="submit" value="Save" class="save" >  </td>
+<td>   <input type="submit" value="Save" class="save " name="insert" >  </td>
 <td>    <input type="submit" value="Reset" class="rest"></td>
 
 </tr>
 </table>
     
     </form>
+
 </div>
 <!-- end form section  -->
 <div>

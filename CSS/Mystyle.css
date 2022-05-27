@@ -176,14 +176,15 @@ border-radius: 6px;
     .experinceFrom{
         float: left;
         margin-top: 45px;
+        padding-right: 120px;
         }
+        
     .image2{
-        float:left;
+      float:right;
       width: 450px;
       height: 440px;
-        margin-top: 45px; 
-        margin-left: 60px;    
-        
+      margin-top: 40px;
+      margin-right: 180px;
         }
     .select{
         width: 175px;
@@ -209,9 +210,10 @@ border-radius: 6px;
         font-family:cursive;
         padding-left: 23px;
     }
+    
     .div3 .web{
-        padding-left: 46px;
-        padding-bottom: 17px;
+        padding-left: 23px;
+        margin-top: 5px;
     }
     .div3 .free{
         padding-top: 47px;
@@ -220,12 +222,21 @@ border-radius: 6px;
         font-size: 15px;
     }
     .div3 .from{
-        padding-left: 46px;
+        padding-left: 23px;
         padding-bottom: 22px;
     }
     .div3 .work{
-        padding-left: 46px;
+        padding-left: 23px;
         padding-bottom: 22px;
-        font-size: 12px;
-        font-weight: bold;
+        margin-top: 10px;
+        font-size: 15px;
+        /* font-weight: bold; */
     }
+   .view{
+       padding-left: 50px;
+       padding-top: 20px;
+   }
+   .imgview{
+       width: 90%;
+     
+   }

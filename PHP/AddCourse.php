@@ -1,3 +1,4 @@
+<?php require_once('file.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,18 +12,12 @@
 <body>
 
 <?php 
-    $servername="localhost";
-    $username="root";
-    $passwpord="";
-    $dbname="web";
-    $conn=mysqli_connect($servername,$username,$passwpord,$dbname);
-    if(!$conn){
-        die('Connectio failed'. mysqli_connect_error());
-    }
+    
 
 // echo "Connection sucessfully";
 
-// $sql1= " CREATE TABLE course3 (
+// $sql= " CREATE TABLE COURSES (
+//     coruse_id INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 //     course_name VARCHAR(30) ,
 //     hours_num INT(10),
 //     date_start DATE ,
@@ -32,13 +27,24 @@
 //     link VARCHAR(10),
 //     form_file VARCHAR(100),
 //     note VARCHAR(30))";
-// if (mysqli_query($conn, $sql1)) {
+// if (mysqli_query($conn, $sql)) {
 // echo "Table course created successfully";
 // } else {
 // echo "Error creating table: " . mysqli_error($conn);
 // }
 
+
+
+
+
+
+
 if(isset($_POST['insert'])){
+    $filename=$_FILES['fileToUpload']['name'];
+    $filetmpname=$_FILES['fileToUpload']['tmp_name'];
+    $folder="../images/";
+    move_uploaded_file($filetmpname,$folder.$filename);
+   
     $name=$_POST['coursename'];
     $num=$_POST['numberofhour'];
     $start=$_POST['startOfDate'];
@@ -46,9 +52,10 @@ if(isset($_POST['insert'])){
     $ins=$_POST['institution'];
     $a=$_POST['att'];
     $ur=$_POST['urll'];
-    $f=$_POST['ChooseFILE'];
+   
     $n=$_POST['note'];
-    $sql = "INSERT INTO course3 (
+    $sql = "INSERT INTO COURSES (
+     
     course_name ,
      hours_num ,
      date_start  ,
@@ -60,57 +67,13 @@ if(isset($_POST['insert'])){
      note )
      VALUES (
          
-         '$name', '$num', '$start','$end','$ins','$a','$ur','$f','$n')";
+         '$name', '$num', '$start','$end','$ins','$a','$ur','$filename','$n')";
   if(!mysqli_query($conn, $sql)){
   
       echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
   }
    
   }
-
-    
-//     if(isset($_POST['submitt']))
-//      {
-//     $one = $_POST['coursename'];
-//     $two = $_POST['numberofhour'];
-//     $three = $_POST['startOfDate'];
-//     $four = $_POST['endOfDate'];
-//     $five = $_POST['institution'];
-//     $six= $_POST['att'];
-//     $seven=$_POST['urll'];
-//     $six="Nooooooooo";
-//     $nine=$_POST['note']; 
-
-//     $sql = " INSERT INTO course3(
-     
-//     course_name ,
-//     hours_num ,
-//      date_start ,
-//      date_end ,
-//      institution ,
-//      Attachment ,
-//      link ,
-//     form_file,
-//      note
-//      )
-// VALUES(
-//     '$one', 
-//     '$two',
-//     '$three',
-//     '$four',
-//     '$five',
-//     '$six',
-//     '$seven',
-//     $six,
-//     '$nine',
-// )";
-// if (mysqli_query($conn, $sql)) {
-// echo "New record created successfully";
-// } else {
-// echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-
-// }
-//      }
 
     
 ?>
@@ -129,7 +92,7 @@ if(isset($_POST['insert'])){
 <a href="Home.php" >Personal Information</a>
 </li>
 <li>
-<a href="Course_View.php">Courses Information</a>
+<a href="ViewCourses.php">Courses Information</a>
 </li>
 <li>
 <a href="ViewExperience.php">Experiences Information</a>
@@ -149,7 +112,7 @@ if(isset($_POST['insert'])){
 
     <!-- start form section -->
     <div class ="courseFrom">
-    <form action="<?php   echo $_SERVER['PHP_SELF'];?>" method="post">
+    <form action="<?php   echo $_SERVER['PHP_SELF'];?>" method="post"  enctype="multipart/form-data">
         <table>
         <tr>
 <td>Course Name: </td>
@@ -187,7 +150,7 @@ if(isset($_POST['insert'])){
 </tr>
 <tr>
     <td>File: </td>
-    <td><input type="file" name="ChooseFILE" id=""></td>
+    <td><input type="file" name="fileToUpload" id=""></td>
 </tr>
 
 <tr>
@@ -200,14 +163,10 @@ if(isset($_POST['insert'])){
 <td id="lefttd">   <input type="submit" value="Save" class="save" name="insert" >  </td>
 <td>    <input type="submit" value="Reset" class="rest"></td>
 </tr>
-
-
 </table>
-
     </form>
 </div>
 <div>
-
     <img src="../images/image1.jpg" alt="" class="courseimage">
     </div>
     
