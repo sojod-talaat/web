@@ -32,11 +32,10 @@
 // } else {
 // echo "Error creating table: " . mysqli_error($conn);
 // }
-
-
-
-
-
+$b=false;
+if(isset($_POST['att'])){
+   return $b=true;
+}
 
 
 if(isset($_POST['insert'])){
@@ -141,27 +140,31 @@ if(isset($_POST['insert'])){
 </tr>
 <tr>
 <td>  Attachment:    </td>
-<td> <input type="radio" name="att" value="url" id="url" checked="checked"> File 
-     <input type="radio" name="att" value="file" id="file"> URL </td>
+<td> <input type="radio" name="att" value="url" id="url"  checked="checked"> File 
+     <input type="radio" name="att" value="file" id="file" > URL </td>
 </tr>
+<?php if($b=='url'): ?>
 <tr>
 <td> URL </td>
 <td>   <input type="text" name="urll" >  </td>
 </tr>
+<?php else: ?>
 <tr>
     <td>File: </td>
     <td><input type="file" name="fileToUpload" id=""></td>
 </tr>
+<?php endif; ?> 
 
 <tr>
     <td>
         Note:
     </td>
-    <td> <textarea row="8" column="6" name="note" > </textarea></td>
+    <td> <textarea row="8"
+     column="6" name="note" > </textarea></td>
 </tr>
 <tr>
 <td id="lefttd">   <input type="submit" value="Save" class="save" name="insert" >  </td>
-<td>    <input type="submit" value="Reset" class="rest"></td>
+<td>    <input type="rest" value="Reset" class="rest" id="rest" ></td>
 </tr>
 </table>
     </form>

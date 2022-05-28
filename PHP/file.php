@@ -7,4 +7,8 @@
  if(!$conn){
      die('Connectio failed'. mysqli_connect_error());
  }
+ session_start(); // start 
+ $_SESSION['username']= "webproject";
+ $_SESSION['password']="web";
+ 
 ?>

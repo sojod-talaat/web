@@ -140,7 +140,7 @@ text-align: center;
     }
     .save{
      width: 180px;
-     height: 25px;
+     height: 30px;
      background-color: #198754;
      border-radius: 5px;
      color:white;
@@ -150,7 +150,8 @@ text-align: center;
         height: 25px;
         background-color: #dc3545;
         border-radius: 5px;
-    color:white;
+        color:white;
+        text-align: center;
     
     }
     input[type=date]{
@@ -240,3 +241,8 @@ border-radius: 6px;
        width: 90%;
      
    }
+   .alert {
+    padding: 5px;
+    background-color: #f44336;
+    color: white;
+  }

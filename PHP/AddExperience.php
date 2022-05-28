@@ -11,8 +11,17 @@
      <link rel="stylesheet" href="../CSS/Mystyle.css"> 
 </head>
 <body> 
-<?php 
-   
+<?php
+
+if(isset($_SESSION['message'])):?>
+	<div class="alert">	
+		<?php 
+		echo $_SESSION['message'];
+		unset($_SESSION['message']);
+		?>
+</div>
+<?php endif ?>
+<?php   
 
 //     $sql="CREATE TABLE EXPERIENCES(
 //         id int(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -55,6 +64,11 @@ if(isset($_POST['insert'])){
   
       echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
   }
+  $_SESSION['message'] = "Record has been inserted!";
+  $_SESSION['msg_type'] = "warning";
+ 
+
+	header("location: AddExperience.php");
    
   }
 ?>
@@ -101,7 +115,7 @@ if(isset($_POST['insert'])){
 <tr>
 <td>Experiences Category: </td>
 <td><select name="languages" class="select">
-				
+				<option value="freelancer"></option>
 				<option value="freelancer">freelancer</option>
 				<option value="job"> job </option>
                 <option value="self learning">self learning </option>
@@ -136,7 +150,7 @@ if(isset($_POST['insert'])){
 </tr>
 <tr>
 <td>   <input type="submit" value="Save" class="save " name="insert" >  </td>
-<td>    <input type="submit" value="Reset" class="rest"></td>
+<td>    <input type="rest" value="Reset" class="rest" id="rest"></td>
 
 </tr>
 </table>
